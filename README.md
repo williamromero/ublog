@@ -437,7 +437,7 @@ Route::get('home', function() {
   curl -sS https://getcomposer.org/installer | php
   sudo mv composer.phar /usr/local/bin/composer
 
-
+  sudo chown -R www-data: storage
   sudo chmod -R 775 /var/www/html/your-project/storage
   sudo chmod -R 755 /var/www/html/public/css
   sudo chmod -R 755 /var/www/html/public/img  
