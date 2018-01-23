@@ -11,10 +11,13 @@
 |
 */
 
+use Carbon\Carbon;
+
 Route::get('/', function () {
+  $today = Carbon::today();
   $posts = App\Post::latest('published_at')->get();
   // return view('welcome')->with('posts', $posts);
-  return view('welcome', compact('posts'));
+  return view('welcome', compact('posts', 'today'));
 });
 
 Route::get('posts', function(){
@@ -23,6 +26,6 @@ Route::get('posts', function(){
 
 Route::get('home', function() {
   return view('admin.dashboard');
-});
+})->middleware('auth');
 
 Route::auth();

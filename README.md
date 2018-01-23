@@ -427,6 +427,57 @@ Route::get('home', function() {
 });
 </pre>
 
+Now, after we build the login, the predefined route and the user, we can login on our form and it will send us to the dashboard. On this, we can add our name to know that we are already authenticated.
+
+<pre>
+  views/admin/layout.blade.php
+
+  <b>
+  {{ auth()->user()->name }}
+  </b>
+</pre>
+
+#### Using Middleware to prevent non-authorized views
+
+To keep the dashboard views safe to our guests, we can add a Middleware, which is a function who do an action just if a statement is true. In this case, our middleware will be called **auth**. This middleware is a public method from the **Auth** system that Laravel uses to handle the login/registration tasks.
+
+<pre>
+  routes/web.php
+
+  Route::get('home', function() {
+    return view('admin.dashboard');
+  })<b>->middleware('auth');</b>
+</pre>
+
+Now, if we loose our session or this expires, we will be redirected to login view.
+
+
+#### Working Sidebar with Partials
+
+To handle pieces of blocks whose going to be used on as a important items from a more bigger structure, we use  **partials**. The idea is split the relevant contents to get a more structured view to read and work and for **reuse the sidebar element** inside of all our internal views. To create a partial, we will create a folder on our admin folder, which will be called **partials**, and inside, we will add the **sidebar** html code. After that, we will insert this part of code on the layout were was placed to keep this component on our view.
+
+<pre>
+  cd views/admin/
+  mkdir partials
+  touch nav.blade.php
+
+  ** COPY THE SIDEBAR CODE **
+</pre>
+
+So, we have to add this **sidebar** on the layout file from our admin (dashboard) were was placed:
+
+<pre>
+  <!-- Sidebar Menu -->
+  @include('admin.partials.nav')
+  <!-- /.sidebar-menu -->
+</pre>
+
+#### Handle sidebar actions with Controllers:
+
+<pre>
+
+</pre>
+
 ## DEPLOY APP ON SERVER
 
 * Create database

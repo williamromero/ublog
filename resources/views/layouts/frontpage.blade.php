@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Zendero</title>
+    <title>{{ config('app.name') }} :: Psicología</title>
     {{-- <link rel="stylesheet" href="/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="{{ asset('/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/framework.css') }}">
@@ -33,6 +33,12 @@
       </div>
   </header>
 
+  <div class="main-slider-container col-xs-12 col-md-12">
+    <div class="row">
+        
+      </div>
+    </div>
+  </div>
 
   <!-- Contenido dinámico -->
   @yield('content')

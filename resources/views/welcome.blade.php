@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.frontpage')
 @section('content')
 
   <section class="posts container">

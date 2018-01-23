@@ -121,7 +121,12 @@
 	display: block;
 }
 .space-inter{
-	padding: 35px 5px;
+  display: flex;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+	padding: 1.5em 0;
 }
 .margin-25{
 	margin:25px 0;
