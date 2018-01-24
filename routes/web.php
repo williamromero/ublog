@@ -13,19 +13,23 @@
 
 use Carbon\Carbon;
 
-Route::get('/', function () {
-  $today = Carbon::today();
-  $posts = App\Post::latest('published_at')->get();
+// Route::get('/', function () {
+  // $today = Carbon::today();
+  // $posts = App\Post::latest('published_at')->get();
   // return view('welcome')->with('posts', $posts);
-  return view('welcome', compact('posts', 'today'));
+  // return view('welcome', compact('posts', 'today'));
+// });
+
+Route::get('/', 'PagesController@home');
+
+// Route::get('admin/posts', 'Admin\PostsController@index');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function (){
+  Route::get('posts', 'PostsController@index');
 });
 
-Route::get('posts', function(){
-  return App\Post::all();
-});
-
-Route::get('home', function() {
-  return view('admin.dashboard');
-})->middleware('auth');
+Route::get('posts', function(){ return App\Post::all(); });
+Route::get('home', function() { return view('admin.dashboard'); })->middleware('auth');
 
 Route::auth();
+
+// Route::group(['prefix' => 'admin', 'namespace'])

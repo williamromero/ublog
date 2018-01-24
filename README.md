@@ -474,9 +474,112 @@ So, we have to add this **sidebar** on the layout file from our admin (dashboard
 
 #### Handle sidebar actions with Controllers:
 
+We need  handle our frontpage views, so we will create a controller called **PagesController** which will serve the index page, contact page and the others.
+[Controllers Laravel](https://laravel.com/docs/5.5/controllers#resource-controllers)
+
 <pre>
+  php artisan make:controller PagesController
+</pre>
+
+And we will create a **PagesController.php** file. Now, we will add the instances variables we are getting from **Post Model** to display on the index page or root route. To do that, we need to go to our **routes file** to get the elements are declared inside the "*/*" address (root address) and we will point this action to the **PagesController** to serve the data was setted on our routes file.
+
+<pre>
+  routes/<b>web.php</b>
+
+  use Carbon\Carbon;
+
+  // Route::get('/', function () {
+  //   $today = Carbon::today();
+  //   $posts = App\Post::latest('published_at')->get();
+  //   return view('welcome', compact('posts', 'today'));
+  // }); 
+
+  TO:
+
+  <b>Route:get('/', 'PagesController@index');</b>
+
+  AND:
+
+  app/Htptp/Controllers/<b>PagesController.php</b>
+
+  &lt;?php
+    namespace App\Http\Controllers;
+    use Illuminate\Http\Request;
+    use App\Post;
+    use Carbon\Carbon;
+
+    class PagesController extends Controller
+    {
+      public function home() {
+        $today = Carbon::today();
+        $posts = Post::latest('published_at')->get();
+        return view('welcome', compact('posts', 'today'));    
+      }
+    }
 
 </pre>
+
+To handle a new controller, first of all, we need to create an **posts folder** inside of admin main folder, to build the views we will use to create, display and update our posts.
+ 
+After that, we will use the command **make:controller** to create our posts internal views.
+
+<pre>
+  touch resources/views/admin/<b>posts/index.blade.php</b>
+  php artisan make:controller Admin/PostsController
+</pre>
+
+It will create our new Posts Controller, whose will be stored on our **Admin** folder, because will be used to handle the internal views to our projects related to the posts. After run this command, the command will create the file with the **namespace** pre-routed to our **Admin** folder.
+
+Now inside our Posts Controller, we will be able to create the necessary views to handle a REST architecture. The first view we will create will be the index, so we need to add a public function called **index()** and also, add the view route on our router file.
+
+<pre>
+  app/Http/Controllers/Admin/<b>PostsController.php</b>
+
+  <?php
+
+  namespace App\Http\Controllers\Admin;
+  use Illuminate\Http\Request;
+  use App\Http\Controllers\Controller;
+  <b>
+  class PostsController extends Controller
+  {
+    public function index() {
+      return view('admin.posts.index');
+    }
+  }
+  </b>
+</pre>
+
+And, we have to declare the routes to handle the views.
+
+<pre>
+  ublog/routes/<b>web.php</b>
+  
+  <b>
+  Route::get('admin/posts', 'Admin\PostsController@index');
+  </b>
+
+  OR CREATE A GROUP FOR EVERY ROUTE WHICH USES THE PREFIX AND NAMESPACE ADMIN:
+  
+  <b>
+  Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function (){
+    Route::get('posts', PostsController@index)
+  });
+  </b>
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## DEPLOY APP ON SERVER
 
