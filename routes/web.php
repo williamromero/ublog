@@ -23,12 +23,12 @@ use Carbon\Carbon;
 Route::get('/', 'PagesController@home');
 
 // Route::get('admin/posts', 'Admin\PostsController@index');
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function (){
+Route::group(['prefix' => 'dashboard', 'namespace' => 'Admin', 'middleware' => 'auth'], function (){
   Route::get('posts', 'PostsController@index');
 });
 
-Route::get('posts', function(){ return App\Post::all(); });
-Route::get('home', function() { return view('admin.dashboard'); })->middleware('auth');
+Route::get('posts', function() { return App\Post::all(); });
+Route::get('dashboard', function() { return view('admin.dashboard'); })->middleware('auth');
 
 Route::auth();
 

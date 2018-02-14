@@ -1,3 +1,9 @@
+#### Create LARAVEL APP
+
+<pre>
+  laravel new <b>name_app</b>
+</pre>
+
 #### Find PID number:
 
 <pre>

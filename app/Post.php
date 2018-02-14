@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //
+  // This is the way to handle "published_at" with Carbon Package
   protected $dates = ['published_at'];
 
   public function category($value='') { 
