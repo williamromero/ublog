@@ -569,10 +569,18 @@ And, we have to declare the routes to handle the views.
   
   <b>
   Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function (){
-    Route::get('posts', PostsController@index)
+    Route::get('posts', PostsController@index)->name('admin.posts.index');
   });
   </b>
+</pre>
 
+To add the link to the main admin posts view, we can use the route helper to add it on the link of the nav:
+
+<pre>
+  &lgt;ul class="treeview-menu"&gt;
+    &lgt;li&gt;&lgt;a href="{{ route('admin.posts.index') }}"&gt;&lgt;i class="fa fa-eye"&gt;&lgt;/i&gt;Ver posts&lgt;/a&gt;&lgt;/li&gt;
+    &lgt;li&gt;&lgt;a href="#"&gt;&lgt;i class="fa fa-pencil"&gt;&lgt;/i&gt;Crear posts&lgt;/a&gt;&lgt;/li&gt;
+  &lgt;/ul&gt;
 </pre>
 
 

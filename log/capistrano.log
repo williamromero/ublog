@@ -87,3 +87,458 @@
   INFO [af431ac5] Running /usr/bin/env echo "Branch master (at af5a5a79568ed363914b8c1925b93c36834fb141) deployed as release 20180207050742 by williamromero" >> /var/www/html/ublog/revisions.log as root@173.255.235.17
  DEBUG [af431ac5] Command: cd /var/www/html/ublog/releases && /usr/bin/env echo "Branch master (at af5a5a79568ed363914b8c1925b93c36834fb141) deployed as release 20180207050742 by williamromero" >> /var/www/html/ublog/revisions.log
   INFO [af431ac5] Finished in 0.289 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-02-14 11:29:41 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [bbb7bb09] Running /usr/bin/env mkdir -p /tmp as root@173.255.235.17
+ DEBUG [bbb7bb09] Command: /usr/bin/env mkdir -p /tmp
+  INFO [bbb7bb09] Finished in 1.006 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 100.0%
+  INFO [3f8e5f87] Running /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh as root@173.255.235.17
+ DEBUG [3f8e5f87] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh
+  INFO [3f8e5f87] Finished in 0.327 seconds with exit status 0 (successful).
+  INFO [f05d0a74] Running /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD as root@173.255.235.17
+ DEBUG [f05d0a74] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD )
+ DEBUG [f05d0a74] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734	HEAD
+  INFO [f05d0a74] Finished in 0.599 seconds with exit status 0 (successful).
+  INFO [ee4c1cb5] Running /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [ee4c1cb5] Command: /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases
+  INFO [ee4c1cb5] Finished in 0.232 seconds with exit status 0 (successful).
+ DEBUG [a5b8939c] Running [ -f /var/www/html/ublog/current/REVISION ] as root@173.255.235.17
+ DEBUG [a5b8939c] Command: [ -f /var/www/html/ublog/current/REVISION ]
+ DEBUG [a5b8939c] Finished in 0.278 seconds with exit status 0 (successful).
+ DEBUG [f85bd1ce] Running /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null as root@173.255.235.17
+ DEBUG [f85bd1ce] Command: /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null
+ DEBUG [f85bd1ce] 	af5a5a79568ed363914b8c1925b93c36834fb141
+ DEBUG [f85bd1ce] Finished in 1.937 seconds with exit status 0 (successful).
+ DEBUG [da62aaf0] Running [ -f /var/www/html/ublog/repo/HEAD ] as root@173.255.235.17
+ DEBUG [da62aaf0] Command: [ -f /var/www/html/ublog/repo/HEAD ]
+ DEBUG [da62aaf0] Finished in 0.168 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/ublog/repo
+ DEBUG [cadc78f1] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [cadc78f1] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [cadc78f1] Finished in 0.277 seconds with exit status 0 (successful).
+  INFO [28246053] Running /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git as root@173.255.235.17
+ DEBUG [28246053] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git )
+  INFO [28246053] Finished in 0.281 seconds with exit status 0 (successful).
+  INFO [0cf8b8d0] Running /usr/bin/env git remote update --prune as root@173.255.235.17
+ DEBUG [0cf8b8d0] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0cf8b8d0] 	Fetching origin
+ DEBUG [0cf8b8d0] 	From https://github.com/williamromero/ublog
+   af5a5a7..28bf3f9  master     -> master
+  INFO [0cf8b8d0] Finished in 0.593 seconds with exit status 0 (successful).
+ DEBUG [cb5f6880] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [cb5f6880] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [cb5f6880] Finished in 0.275 seconds with exit status 0 (successful).
+  INFO [4a188b51] Running /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214172946 as root@173.255.235.17
+ DEBUG [4a188b51] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214172946 )
+  INFO [4a188b51] Finished in 0.279 seconds with exit status 0 (successful).
+  INFO [0425b676] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214172946 as root@173.255.235.17
+ DEBUG [0425b676] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214172946 )
+  INFO [0425b676] Finished in 1.101 seconds with exit status 0 (successful).
+ DEBUG [9a54e39a] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [9a54e39a] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [9a54e39a] Finished in 0.276 seconds with exit status 0 (successful).
+ DEBUG [e455dfee] Running /usr/bin/env git rev-list --max-count=1 master as root@173.255.235.17
+ DEBUG [e455dfee] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e455dfee] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [e455dfee] Finished in 0.279 seconds with exit status 0 (successful).
+ DEBUG [54f5d9e2] Running if test ! -d /var/www/html/ublog/releases/20180214172946; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214172946'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [54f5d9e2] Command: if test ! -d /var/www/html/ublog/releases/20180214172946; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214172946'" 1>&2; false; fi
+ DEBUG [54f5d9e2] Finished in 0.274 seconds with exit status 0 (successful).
+  INFO [cdcf986e] Running /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION as root@173.255.235.17
+ DEBUG [cdcf986e] Command: cd /var/www/html/ublog/releases/20180214172946 && /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION
+  INFO [cdcf986e] Finished in 0.277 seconds with exit status 0 (successful).
+ DEBUG [82c07406] Running if test ! -d /var/www/html/ublog/releases/20180214172946; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214172946'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [82c07406] Command: if test ! -d /var/www/html/ublog/releases/20180214172946; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214172946'" 1>&2; false; fi
+ DEBUG [82c07406] Finished in 0.274 seconds with exit status 0 (successful).
+  INFO [ea0fbc1d] Running /usr/bin/env composer install --no-dev --quiet as root@173.255.235.17
+ DEBUG [ea0fbc1d] Command: cd /var/www/html/ublog/releases/20180214172946 && /usr/bin/env composer install --no-dev --quiet
+  INFO [ea0fbc1d] Finished in 2.507 seconds with exit status 0 (successful).
+  INFO [e70e8019] Running /usr/bin/env chmod u+x artisan as root@173.255.235.17
+ DEBUG [e70e8019] Command: cd /var/www/html/ublog/releases/20180214172946 && /usr/bin/env chmod u+x artisan
+  INFO [e70e8019] Finished in 0.283 seconds with exit status 0 (successful).
+  INFO [6630d3ae] Running /usr/bin/env ln -s /var/www/html/ublog/releases/20180214172946 /var/www/html/ublog/releases/current as root@173.255.235.17
+ DEBUG [6630d3ae] Command: /usr/bin/env ln -s /var/www/html/ublog/releases/20180214172946 /var/www/html/ublog/releases/current
+  INFO [6630d3ae] Finished in 0.276 seconds with exit status 0 (successful).
+  INFO [4a317039] Running /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog as root@173.255.235.17
+ DEBUG [4a317039] Command: /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog
+  INFO [4a317039] Finished in 0.283 seconds with exit status 0 (successful).
+ DEBUG [baca18a0] Running /usr/bin/env ls -x /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [baca18a0] Command: /usr/bin/env ls -x /var/www/html/ublog/releases
+ DEBUG [baca18a0] 	20180207050742	20180214172946
+ DEBUG [baca18a0] Finished in 0.308 seconds with exit status 0 (successful).
+ DEBUG [972da02c] Running if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [972da02c] Command: if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi
+ DEBUG [972da02c] Finished in 0.278 seconds with exit status 0 (successful).
+  INFO [1c75993a] Running /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214172946 by williamromero" >> /var/www/html/ublog/revisions.log as root@173.255.235.17
+ DEBUG [1c75993a] Command: cd /var/www/html/ublog/releases && /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214172946 by williamromero" >> /var/www/html/ublog/revisions.log
+  INFO [1c75993a] Finished in 0.280 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-02-14 11:31:06 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e6e4c209] Running /usr/bin/env mkdir -p /tmp as root@173.255.235.17
+ DEBUG [e6e4c209] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e6e4c209] Finished in 0.987 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 100.0%
+  INFO [bcf5cfc4] Running /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh as root@173.255.235.17
+ DEBUG [bcf5cfc4] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh
+  INFO [bcf5cfc4] Finished in 0.277 seconds with exit status 0 (successful).
+  INFO [1af6234e] Running /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD as root@173.255.235.17
+ DEBUG [1af6234e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD )
+ DEBUG [1af6234e] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734	HEAD
+  INFO [1af6234e] Finished in 0.664 seconds with exit status 0 (successful).
+  INFO [dea7b4db] Running /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [dea7b4db] Command: /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases
+  INFO [dea7b4db] Finished in 0.294 seconds with exit status 0 (successful).
+ DEBUG [2c1956a3] Running [ -f /var/www/html/ublog/current/REVISION ] as root@173.255.235.17
+ DEBUG [2c1956a3] Command: [ -f /var/www/html/ublog/current/REVISION ]
+ DEBUG [2c1956a3] Finished in 0.278 seconds with exit status 0 (successful).
+ DEBUG [6cc3be89] Running /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null as root@173.255.235.17
+ DEBUG [6cc3be89] Command: /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null
+ DEBUG [6cc3be89] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [6cc3be89] Finished in 0.286 seconds with exit status 0 (successful).
+ DEBUG [27678b3e] Running [ -f /var/www/html/ublog/repo/HEAD ] as root@173.255.235.17
+ DEBUG [27678b3e] Command: [ -f /var/www/html/ublog/repo/HEAD ]
+ DEBUG [27678b3e] Finished in 0.277 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/ublog/repo
+ DEBUG [46fae075] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [46fae075] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [46fae075] Finished in 0.278 seconds with exit status 0 (successful).
+  INFO [baa6fde6] Running /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git as root@173.255.235.17
+ DEBUG [baa6fde6] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git )
+  INFO [baa6fde6] Finished in 0.282 seconds with exit status 0 (successful).
+  INFO [a5ec82dc] Running /usr/bin/env git remote update --prune as root@173.255.235.17
+ DEBUG [a5ec82dc] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [a5ec82dc] 	Fetching origin
+  INFO [a5ec82dc] Finished in 0.540 seconds with exit status 0 (successful).
+ DEBUG [acea862c] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [acea862c] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [acea862c] Finished in 0.272 seconds with exit status 0 (successful).
+  INFO [a167f772] Running /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214173110 as root@173.255.235.17
+ DEBUG [a167f772] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214173110 )
+  INFO [a167f772] Finished in 0.285 seconds with exit status 0 (successful).
+  INFO [2e3f68a6] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214173110 as root@173.255.235.17
+ DEBUG [2e3f68a6] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214173110 )
+  INFO [2e3f68a6] Finished in 1.124 seconds with exit status 0 (successful).
+ DEBUG [2a987dfe] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [2a987dfe] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [2a987dfe] Finished in 0.286 seconds with exit status 0 (successful).
+ DEBUG [5d452510] Running /usr/bin/env git rev-list --max-count=1 master as root@173.255.235.17
+ DEBUG [5d452510] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [5d452510] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [5d452510] Finished in 0.283 seconds with exit status 0 (successful).
+ DEBUG [96e7d797] Running if test ! -d /var/www/html/ublog/releases/20180214173110; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173110'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [96e7d797] Command: if test ! -d /var/www/html/ublog/releases/20180214173110; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173110'" 1>&2; false; fi
+ DEBUG [96e7d797] Finished in 0.275 seconds with exit status 0 (successful).
+  INFO [d6ffb428] Running /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION as root@173.255.235.17
+ DEBUG [d6ffb428] Command: cd /var/www/html/ublog/releases/20180214173110 && /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION
+  INFO [d6ffb428] Finished in 0.284 seconds with exit status 0 (successful).
+ DEBUG [be485a24] Running if test ! -d /var/www/html/ublog/releases/20180214173110; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173110'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [be485a24] Command: if test ! -d /var/www/html/ublog/releases/20180214173110; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173110'" 1>&2; false; fi
+ DEBUG [be485a24] Finished in 0.280 seconds with exit status 0 (successful).
+  INFO [5e626092] Running /usr/bin/env composer install --no-dev --quiet as root@173.255.235.17
+ DEBUG [5e626092] Command: cd /var/www/html/ublog/releases/20180214173110 && /usr/bin/env composer install --no-dev --quiet
+  INFO [5e626092] Finished in 2.308 seconds with exit status 0 (successful).
+  INFO [2d71c136] Running /usr/bin/env chmod u+x artisan as root@173.255.235.17
+ DEBUG [2d71c136] Command: cd /var/www/html/ublog/releases/20180214173110 && /usr/bin/env chmod u+x artisan
+  INFO [2d71c136] Finished in 0.276 seconds with exit status 0 (successful).
+  INFO [cc4219d4] Running /usr/bin/env ln -s /var/www/html/ublog/releases/20180214173110 /var/www/html/ublog/releases/current as root@173.255.235.17
+ DEBUG [cc4219d4] Command: /usr/bin/env ln -s /var/www/html/ublog/releases/20180214173110 /var/www/html/ublog/releases/current
+  INFO [cc4219d4] Finished in 0.283 seconds with exit status 0 (successful).
+  INFO [a7ba544f] Running /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog as root@173.255.235.17
+ DEBUG [a7ba544f] Command: /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog
+  INFO [a7ba544f] Finished in 0.285 seconds with exit status 0 (successful).
+ DEBUG [0b6b6cc1] Running /usr/bin/env ls -x /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [0b6b6cc1] Command: /usr/bin/env ls -x /var/www/html/ublog/releases
+ DEBUG [0b6b6cc1] 	20180207050742	20180214172946	20180214173110
+ DEBUG [0b6b6cc1] Finished in 0.284 seconds with exit status 0 (successful).
+ DEBUG [2e80b0c3] Running if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [2e80b0c3] Command: if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi
+ DEBUG [2e80b0c3] Finished in 0.278 seconds with exit status 0 (successful).
+  INFO [e83418e1] Running /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214173110 by williamromero" >> /var/www/html/ublog/revisions.log as root@173.255.235.17
+ DEBUG [e83418e1] Command: cd /var/www/html/ublog/releases && /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214173110 by williamromero" >> /var/www/html/ublog/revisions.log
+  INFO [e83418e1] Finished in 0.280 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-02-14 11:33:59 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0b4b7fbf] Running /usr/bin/env mkdir -p /tmp as root@173.255.235.17
+ DEBUG [0b4b7fbf] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0b4b7fbf] Finished in 1.017 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 100.0%
+  INFO [e0f5834b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh as root@173.255.235.17
+ DEBUG [e0f5834b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh
+  INFO [e0f5834b] Finished in 0.288 seconds with exit status 0 (successful).
+  INFO [4b36d08d] Running /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD as root@173.255.235.17
+ DEBUG [4b36d08d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD )
+ DEBUG [4b36d08d] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734	HEAD
+  INFO [4b36d08d] Finished in 1.015 seconds with exit status 0 (successful).
+  INFO [c0872e14] Running /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [c0872e14] Command: /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases
+  INFO [c0872e14] Finished in 0.288 seconds with exit status 0 (successful).
+ DEBUG [80885dac] Running [ -f /var/www/html/ublog/current/REVISION ] as root@173.255.235.17
+ DEBUG [80885dac] Command: [ -f /var/www/html/ublog/current/REVISION ]
+ DEBUG [80885dac] Finished in 0.286 seconds with exit status 0 (successful).
+ DEBUG [e8a7b096] Running /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null as root@173.255.235.17
+ DEBUG [e8a7b096] Command: /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null
+ DEBUG [e8a7b096] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [e8a7b096] Finished in 0.292 seconds with exit status 0 (successful).
+ DEBUG [04b47729] Running [ -f /var/www/html/ublog/repo/HEAD ] as root@173.255.235.17
+ DEBUG [04b47729] Command: [ -f /var/www/html/ublog/repo/HEAD ]
+ DEBUG [04b47729] Finished in 0.287 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/ublog/repo
+ DEBUG [5e22fddf] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [5e22fddf] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [5e22fddf] Finished in 0.286 seconds with exit status 0 (successful).
+  INFO [3f565f94] Running /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git as root@173.255.235.17
+ DEBUG [3f565f94] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git )
+  INFO [3f565f94] Finished in 0.289 seconds with exit status 0 (successful).
+  INFO [44653bc4] Running /usr/bin/env git remote update --prune as root@173.255.235.17
+ DEBUG [44653bc4] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [44653bc4] 	Fetching origin
+  INFO [44653bc4] Finished in 1.034 seconds with exit status 0 (successful).
+ DEBUG [f8f553b8] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [f8f553b8] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [f8f553b8] Finished in 0.287 seconds with exit status 0 (successful).
+  INFO [1cc3c874] Running /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214173403 as root@173.255.235.17
+ DEBUG [1cc3c874] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214173403 )
+  INFO [1cc3c874] Finished in 0.288 seconds with exit status 0 (successful).
+  INFO [13235ff3] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214173403 as root@173.255.235.17
+ DEBUG [13235ff3] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214173403 )
+  INFO [13235ff3] Finished in 1.543 seconds with exit status 0 (successful).
+ DEBUG [7e3b67c4] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [7e3b67c4] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [7e3b67c4] Finished in 0.286 seconds with exit status 0 (successful).
+ DEBUG [332a1fb3] Running /usr/bin/env git rev-list --max-count=1 master as root@173.255.235.17
+ DEBUG [332a1fb3] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [332a1fb3] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [332a1fb3] Finished in 0.292 seconds with exit status 0 (successful).
+ DEBUG [1d8c0a5e] Running if test ! -d /var/www/html/ublog/releases/20180214173403; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173403'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [1d8c0a5e] Command: if test ! -d /var/www/html/ublog/releases/20180214173403; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173403'" 1>&2; false; fi
+ DEBUG [1d8c0a5e] Finished in 0.302 seconds with exit status 0 (successful).
+  INFO [70d36dfb] Running /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION as root@173.255.235.17
+ DEBUG [70d36dfb] Command: cd /var/www/html/ublog/releases/20180214173403 && /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION
+  INFO [70d36dfb] Finished in 0.291 seconds with exit status 0 (successful).
+ DEBUG [d3272605] Running if test ! -d /var/www/html/ublog/releases/20180214173403; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173403'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [d3272605] Command: if test ! -d /var/www/html/ublog/releases/20180214173403; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173403'" 1>&2; false; fi
+ DEBUG [d3272605] Finished in 0.293 seconds with exit status 0 (successful).
+  INFO [5d887ede] Running /usr/bin/env composer install --no-dev --quiet as root@173.255.235.17
+ DEBUG [5d887ede] Command: cd /var/www/html/ublog/releases/20180214173403 && /usr/bin/env composer install --no-dev --quiet
+  INFO [5d887ede] Finished in 2.604 seconds with exit status 0 (successful).
+  INFO [ed5f5033] Running /usr/bin/env chmod u+x artisan as root@173.255.235.17
+ DEBUG [ed5f5033] Command: cd /var/www/html/ublog/releases/20180214173403 && /usr/bin/env chmod u+x artisan
+  INFO [ed5f5033] Finished in 0.292 seconds with exit status 0 (successful).
+  INFO [a122fd23] Running /usr/bin/env ln -s /var/www/html/ublog/releases/20180214173403 /var/www/html/ublog/releases/current as root@173.255.235.17
+ DEBUG [a122fd23] Command: /usr/bin/env ln -s /var/www/html/ublog/releases/20180214173403 /var/www/html/ublog/releases/current
+  INFO [a122fd23] Finished in 0.290 seconds with exit status 0 (successful).
+  INFO [dbffae74] Running /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog as root@173.255.235.17
+ DEBUG [dbffae74] Command: /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog
+  INFO [dbffae74] Finished in 0.295 seconds with exit status 0 (successful).
+ DEBUG [d7fe31e8] Running /usr/bin/env ls -x /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [d7fe31e8] Command: /usr/bin/env ls -x /var/www/html/ublog/releases
+ DEBUG [d7fe31e8] 	20180207050742	20180214172946	20180214173110	20180214173403
+ DEBUG [d7fe31e8] Finished in 0.288 seconds with exit status 0 (successful).
+ DEBUG [f70cde7a] Running if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [f70cde7a] Command: if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi
+ DEBUG [f70cde7a] Finished in 0.287 seconds with exit status 0 (successful).
+  INFO [5d64b263] Running /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214173403 by williamromero" >> /var/www/html/ublog/revisions.log as root@173.255.235.17
+ DEBUG [5d64b263] Command: cd /var/www/html/ublog/releases && /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214173403 by williamromero" >> /var/www/html/ublog/revisions.log
+  INFO [5d64b263] Finished in 0.288 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-02-14 11:34:25 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cd3462b4] Running /usr/bin/env mkdir -p /tmp as root@173.255.235.17
+ DEBUG [cd3462b4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cd3462b4] Finished in 1.026 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 100.0%
+  INFO [4756d343] Running /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh as root@173.255.235.17
+ DEBUG [4756d343] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh
+  INFO [4756d343] Finished in 0.282 seconds with exit status 0 (successful).
+  INFO [86377b15] Running /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD as root@173.255.235.17
+ DEBUG [86377b15] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD )
+ DEBUG [86377b15] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734	HEAD
+  INFO [86377b15] Finished in 0.575 seconds with exit status 0 (successful).
+  INFO [a283eae3] Running /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [a283eae3] Command: /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases
+  INFO [a283eae3] Finished in 0.663 seconds with exit status 0 (successful).
+ DEBUG [aef4560c] Running [ -f /var/www/html/ublog/current/REVISION ] as root@173.255.235.17
+ DEBUG [aef4560c] Command: [ -f /var/www/html/ublog/current/REVISION ]
+ DEBUG [aef4560c] Finished in 0.826 seconds with exit status 0 (successful).
+ DEBUG [0653b5b0] Running /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null as root@173.255.235.17
+ DEBUG [0653b5b0] Command: /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null
+ DEBUG [0653b5b0] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [0653b5b0] Finished in 0.273 seconds with exit status 0 (successful).
+ DEBUG [a52ba025] Running [ -f /var/www/html/ublog/repo/HEAD ] as root@173.255.235.17
+ DEBUG [a52ba025] Command: [ -f /var/www/html/ublog/repo/HEAD ]
+ DEBUG [a52ba025] Finished in 0.282 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/ublog/repo
+ DEBUG [19ca35ca] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [19ca35ca] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [19ca35ca] Finished in 0.360 seconds with exit status 0 (successful).
+  INFO [a59e4413] Running /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git as root@173.255.235.17
+ DEBUG [a59e4413] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git )
+  INFO [a59e4413] Finished in 0.282 seconds with exit status 0 (successful).
+  INFO [962eb88d] Running /usr/bin/env git remote update --prune as root@173.255.235.17
+ DEBUG [962eb88d] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [962eb88d] 	Fetching origin
+  INFO [962eb88d] Finished in 0.514 seconds with exit status 0 (successful).
+ DEBUG [fdfb9056] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [fdfb9056] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [fdfb9056] Finished in 0.618 seconds with exit status 0 (successful).
+  INFO [52f5c295] Running /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214173429 as root@173.255.235.17
+ DEBUG [52f5c295] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214173429 )
+  INFO [52f5c295] Finished in 0.280 seconds with exit status 0 (successful).
+  INFO [7023f9a4] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214173429 as root@173.255.235.17
+ DEBUG [7023f9a4] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214173429 )
+  INFO [7023f9a4] Finished in 1.292 seconds with exit status 0 (successful).
+ DEBUG [463cdeb3] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [463cdeb3] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [463cdeb3] Finished in 0.276 seconds with exit status 0 (successful).
+ DEBUG [daa3c7f4] Running /usr/bin/env git rev-list --max-count=1 master as root@173.255.235.17
+ DEBUG [daa3c7f4] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [daa3c7f4] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [daa3c7f4] Finished in 0.283 seconds with exit status 0 (successful).
+ DEBUG [257a46b5] Running if test ! -d /var/www/html/ublog/releases/20180214173429; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173429'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [257a46b5] Command: if test ! -d /var/www/html/ublog/releases/20180214173429; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173429'" 1>&2; false; fi
+ DEBUG [257a46b5] Finished in 0.346 seconds with exit status 0 (successful).
+  INFO [1805a9e3] Running /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION as root@173.255.235.17
+ DEBUG [1805a9e3] Command: cd /var/www/html/ublog/releases/20180214173429 && /usr/bin/env echo "28bf3f90e21946ab015f5eb609ac8c5c4eaf9734" >> REVISION
+  INFO [1805a9e3] Finished in 0.277 seconds with exit status 0 (successful).
+ DEBUG [85dc5302] Running if test ! -d /var/www/html/ublog/releases/20180214173429; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173429'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [85dc5302] Command: if test ! -d /var/www/html/ublog/releases/20180214173429; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214173429'" 1>&2; false; fi
+ DEBUG [85dc5302] Finished in 0.274 seconds with exit status 0 (successful).
+  INFO [b50d7ac9] Running /usr/bin/env composer install --no-dev --quiet as root@173.255.235.17
+ DEBUG [b50d7ac9] Command: cd /var/www/html/ublog/releases/20180214173429 && /usr/bin/env composer install --no-dev --quiet
+  INFO [b50d7ac9] Finished in 2.095 seconds with exit status 0 (successful).
+  INFO [b4293105] Running /usr/bin/env chmod u+x artisan as root@173.255.235.17
+ DEBUG [b4293105] Command: cd /var/www/html/ublog/releases/20180214173429 && /usr/bin/env chmod u+x artisan
+  INFO [b4293105] Finished in 0.284 seconds with exit status 0 (successful).
+  INFO [e33f87c1] Running /usr/bin/env ln -s /var/www/html/ublog/releases/20180214173429 /var/www/html/ublog/releases/current as root@173.255.235.17
+ DEBUG [e33f87c1] Command: /usr/bin/env ln -s /var/www/html/ublog/releases/20180214173429 /var/www/html/ublog/releases/current
+  INFO [e33f87c1] Finished in 0.285 seconds with exit status 0 (successful).
+  INFO [093aae48] Running /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog as root@173.255.235.17
+ DEBUG [093aae48] Command: /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog
+  INFO [093aae48] Finished in 0.280 seconds with exit status 0 (successful).
+ DEBUG [40064b1f] Running /usr/bin/env ls -x /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [40064b1f] Command: /usr/bin/env ls -x /var/www/html/ublog/releases
+ DEBUG [40064b1f] 	20180207050742	20180214172946	20180214173110	20180214173403	20180214173429
+ DEBUG [40064b1f] Finished in 0.283 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on 173.255.235.17
+ DEBUG [090522e6] Running [ -d /var/www/html/ublog/current ] as root@173.255.235.17
+ DEBUG [090522e6] Command: [ -d /var/www/html/ublog/current ]
+ DEBUG [090522e6] Finished in 0.278 seconds with exit status 0 (successful).
+ DEBUG [ae1b5d0a] Running /usr/bin/env readlink /var/www/html/ublog/current as root@173.255.235.17
+ DEBUG [ae1b5d0a] Command: /usr/bin/env readlink /var/www/html/ublog/current
+ DEBUG [ae1b5d0a] 	/var/www/html/ublog/releases/20180214173429
+ DEBUG [ae1b5d0a] Finished in 0.283 seconds with exit status 0 (successful).
+  INFO No old releases (keeping newest 5) on 173.255.235.17
+ DEBUG [e01ae8a3] Running if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [e01ae8a3] Command: if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi
+ DEBUG [e01ae8a3] Finished in 0.286 seconds with exit status 0 (successful).
+  INFO [ba685bf3] Running /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214173429 by williamromero" >> /var/www/html/ublog/revisions.log as root@173.255.235.17
+ DEBUG [ba685bf3] Command: cd /var/www/html/ublog/releases && /usr/bin/env echo "Branch master (at 28bf3f90e21946ab015f5eb609ac8c5c4eaf9734) deployed as release 20180214173429 by williamromero" >> /var/www/html/ublog/revisions.log
+  INFO [ba685bf3] Finished in 0.278 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-02-14 11:40:59 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b7901573] Running /usr/bin/env mkdir -p /tmp as root@173.255.235.17
+ DEBUG [b7901573] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b7901573] Finished in 1.015 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Ublog-production-williamromero.sh 100.0%
+  INFO [68ea1c67] Running /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh as root@173.255.235.17
+ DEBUG [68ea1c67] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Ublog-production-williamromero.sh
+  INFO [68ea1c67] Finished in 0.291 seconds with exit status 0 (successful).
+  INFO [972700f8] Running /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD as root@173.255.235.17
+ DEBUG [972700f8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git ls-remote https://github.com/williamromero/ublog.git HEAD )
+ DEBUG [972700f8] 	5dc7d84df5a4d404d5ee0d8961e04b5d895f2c39	HEAD
+  INFO [972700f8] Finished in 2.975 seconds with exit status 0 (successful).
+  INFO [8bbd0e98] Running /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [8bbd0e98] Command: /usr/bin/env mkdir -p /var/www/html/ublog/shared /var/www/html/ublog/releases
+  INFO [8bbd0e98] Finished in 0.275 seconds with exit status 0 (successful).
+ DEBUG [4f7ab731] Running [ -f /var/www/html/ublog/current/REVISION ] as root@173.255.235.17
+ DEBUG [4f7ab731] Command: [ -f /var/www/html/ublog/current/REVISION ]
+ DEBUG [4f7ab731] Finished in 0.290 seconds with exit status 0 (successful).
+ DEBUG [3762781a] Running /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null as root@173.255.235.17
+ DEBUG [3762781a] Command: /usr/bin/env cat /var/www/html/ublog/current/REVISION 2>/dev/null
+ DEBUG [3762781a] 	28bf3f90e21946ab015f5eb609ac8c5c4eaf9734
+ DEBUG [3762781a] Finished in 0.295 seconds with exit status 0 (successful).
+ DEBUG [751820c0] Running [ -f /var/www/html/ublog/repo/HEAD ] as root@173.255.235.17
+ DEBUG [751820c0] Command: [ -f /var/www/html/ublog/repo/HEAD ]
+ DEBUG [751820c0] Finished in 0.287 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/ublog/repo
+ DEBUG [fba2d468] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [fba2d468] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [fba2d468] Finished in 0.285 seconds with exit status 0 (successful).
+  INFO [7d1ccc28] Running /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git as root@173.255.235.17
+ DEBUG [7d1ccc28] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote set-url origin https://github.com/williamromero/ublog.git )
+  INFO [7d1ccc28] Finished in 0.291 seconds with exit status 0 (successful).
+  INFO [164f0ff7] Running /usr/bin/env git remote update --prune as root@173.255.235.17
+ DEBUG [164f0ff7] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [164f0ff7] 	Fetching origin
+ DEBUG [164f0ff7] 	From https://github.com/williamromero/ublog
+   28bf3f9..5dc7d84  master     -> master
+  INFO [164f0ff7] Finished in 1.038 seconds with exit status 0 (successful).
+ DEBUG [61321ac8] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [61321ac8] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [61321ac8] Finished in 0.286 seconds with exit status 0 (successful).
+  INFO [8c3853cf] Running /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214174104 as root@173.255.235.17
+ DEBUG [8c3853cf] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env mkdir -p /var/www/html/ublog/releases/20180214174104 )
+  INFO [8c3853cf] Finished in 0.290 seconds with exit status 0 (successful).
+  INFO [c2ddbc51] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214174104 as root@173.255.235.17
+ DEBUG [c2ddbc51] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/ublog/releases/20180214174104 )
+  INFO [c2ddbc51] Finished in 1.367 seconds with exit status 0 (successful).
+ DEBUG [57e61914] Running if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [57e61914] Command: if test ! -d /var/www/html/ublog/repo; then echo "Directory does not exist '/var/www/html/ublog/repo'" 1>&2; false; fi
+ DEBUG [57e61914] Finished in 0.290 seconds with exit status 0 (successful).
+ DEBUG [429e45e0] Running /usr/bin/env git rev-list --max-count=1 master as root@173.255.235.17
+ DEBUG [429e45e0] Command: cd /var/www/html/ublog/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Ublog-production-williamromero.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [429e45e0] 	5dc7d84df5a4d404d5ee0d8961e04b5d895f2c39
+ DEBUG [429e45e0] Finished in 0.289 seconds with exit status 0 (successful).
+ DEBUG [f4a0446c] Running if test ! -d /var/www/html/ublog/releases/20180214174104; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214174104'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [f4a0446c] Command: if test ! -d /var/www/html/ublog/releases/20180214174104; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214174104'" 1>&2; false; fi
+ DEBUG [f4a0446c] Finished in 0.294 seconds with exit status 0 (successful).
+  INFO [6adafb73] Running /usr/bin/env echo "5dc7d84df5a4d404d5ee0d8961e04b5d895f2c39" >> REVISION as root@173.255.235.17
+ DEBUG [6adafb73] Command: cd /var/www/html/ublog/releases/20180214174104 && /usr/bin/env echo "5dc7d84df5a4d404d5ee0d8961e04b5d895f2c39" >> REVISION
+  INFO [6adafb73] Finished in 0.292 seconds with exit status 0 (successful).
+ DEBUG [153db09a] Running if test ! -d /var/www/html/ublog/releases/20180214174104; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214174104'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [153db09a] Command: if test ! -d /var/www/html/ublog/releases/20180214174104; then echo "Directory does not exist '/var/www/html/ublog/releases/20180214174104'" 1>&2; false; fi
+ DEBUG [153db09a] Finished in 0.287 seconds with exit status 0 (successful).
+  INFO [268f7b98] Running /usr/bin/env composer install --no-dev --quiet as root@173.255.235.17
+ DEBUG [268f7b98] Command: cd /var/www/html/ublog/releases/20180214174104 && /usr/bin/env composer install --no-dev --quiet
+  INFO [268f7b98] Finished in 2.130 seconds with exit status 0 (successful).
+  INFO [c113259d] Running /usr/bin/env chmod u+x artisan as root@173.255.235.17
+ DEBUG [c113259d] Command: cd /var/www/html/ublog/releases/20180214174104 && /usr/bin/env chmod u+x artisan
+  INFO [c113259d] Finished in 0.288 seconds with exit status 0 (successful).
+  INFO [0914741f] Running /usr/bin/env ln -s /var/www/html/ublog/releases/20180214174104 /var/www/html/ublog/releases/current as root@173.255.235.17
+ DEBUG [0914741f] Command: /usr/bin/env ln -s /var/www/html/ublog/releases/20180214174104 /var/www/html/ublog/releases/current
+  INFO [0914741f] Finished in 0.286 seconds with exit status 0 (successful).
+  INFO [ecfb4c40] Running /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog as root@173.255.235.17
+ DEBUG [ecfb4c40] Command: /usr/bin/env mv /var/www/html/ublog/releases/current /var/www/html/ublog
+  INFO [ecfb4c40] Finished in 0.289 seconds with exit status 0 (successful).
+ DEBUG [90f51819] Running /usr/bin/env ls -x /var/www/html/ublog/releases as root@173.255.235.17
+ DEBUG [90f51819] Command: /usr/bin/env ls -x /var/www/html/ublog/releases
+ DEBUG [90f51819] 	20180207050742	20180214172946	20180214173110	20180214173403	20180214173429
+20180214174104
+ DEBUG [90f51819] Finished in 0.300 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 173.255.235.17
+ DEBUG [6462a554] Running [ -d /var/www/html/ublog/current ] as root@173.255.235.17
+ DEBUG [6462a554] Command: [ -d /var/www/html/ublog/current ]
+ DEBUG [6462a554] Finished in 0.291 seconds with exit status 0 (successful).
+ DEBUG [a1fc50b2] Running /usr/bin/env readlink /var/www/html/ublog/current as root@173.255.235.17
+ DEBUG [a1fc50b2] Command: /usr/bin/env readlink /var/www/html/ublog/current
+ DEBUG [a1fc50b2] 	/var/www/html/ublog/releases/20180214174104
+ DEBUG [a1fc50b2] Finished in 0.292 seconds with exit status 0 (successful).
+  INFO [343e881c] Running /usr/bin/env rm -rf /var/www/html/ublog/releases/20180207050742 as root@173.255.235.17
+ DEBUG [343e881c] Command: /usr/bin/env rm -rf /var/www/html/ublog/releases/20180207050742
+  INFO [343e881c] Finished in 0.474 seconds with exit status 0 (successful).
+ DEBUG [acec1a52] Running if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi as root@173.255.235.17
+ DEBUG [acec1a52] Command: if test ! -d /var/www/html/ublog/releases; then echo "Directory does not exist '/var/www/html/ublog/releases'" 1>&2; false; fi
+ DEBUG [acec1a52] Finished in 0.290 seconds with exit status 0 (successful).
+  INFO [0d64f0fc] Running /usr/bin/env echo "Branch master (at 5dc7d84df5a4d404d5ee0d8961e04b5d895f2c39) deployed as release 20180214174104 by williamromero" >> /var/www/html/ublog/revisions.log as root@173.255.235.17
+ DEBUG [0d64f0fc] Command: cd /var/www/html/ublog/releases && /usr/bin/env echo "Branch master (at 5dc7d84df5a4d404d5ee0d8961e04b5d895f2c39) deployed as release 20180214174104 by williamromero" >> /var/www/html/ublog/revisions.log
+  INFO [0d64f0fc] Finished in 0.290 seconds with exit status 0 (successful).
